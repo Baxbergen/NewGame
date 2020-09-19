@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvfirst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="21"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="100dp"
+        android:textSize="50dp"
+        android:textColor="#B30071"
+        app:layout_constraintVertical_bias="0.35"/>
+    <TextView
+        android:id="@+id/tvsecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/tvfirst"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="+"
+        android:textSize="50dp"
+        android:textColor="#B30071"
+        app:layout_constraintVertical_bias="0.35"/>
+    <TextView
+        android:id="@+id/third"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/tvsecond"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="86"
+        android:textSize="50dp"
+        android:textColor="#B30071"
+        app:layout_constraintVertical_bias="0.35"/>
+    <Button
+        android:id="@+id/btnA"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="400dp"
+        android:text="456"
+        android:textSize="32sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:onClick="variantClick"/>
+
+    <Button
+        android:id="@+id/btnB"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnA"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:text="456"
+        android:textSize="32sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:onClick="variantClick"/>
+
+    <Button
+        android:id="@+id/btnC"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
+        app:layout_constraintStart_toEndOf="@id/btnA"
+        app:layout_constraintTop_toTopOf="@id/btnA"
+        android:layout_marginStart="40dp"
+        android:text="456"
+        android:textSize="32sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:onClick="variantClick"/>
+    <Button
+        android:id="@+id/btnD"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
+        app:layout_constraintStart_toStartOf="@id/btnC"
+        app:layout_constraintTop_toBottomOf="@id/btnC"
+        android:layout_marginTop="20dp"
+        android:text="456"
+        android:textSize="32sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:onClick="variantClick"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
