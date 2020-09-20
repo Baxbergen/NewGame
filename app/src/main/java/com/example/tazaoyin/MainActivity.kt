@@ -9,16 +9,10 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
-    companion object{
-        const val LEVEL_COUNT = 10
-        const val RIGHT_ANSWERS_COUNT="rightAnswersCount"
-        const val WRONG_ANSWERS_COUNT="wrongAnswersCount"
-    }
+
     private var firstNumber:Int=0
     private var secondNumber:Int=0
     private var operator:String=""
-    private var trueAnswer:Int=0
-    private var falseAnswer:Int=0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,20 +20,12 @@ class MainActivity : AppCompatActivity() {
         playGame()
     }
     fun variantClick(view: View){
-        val selectedAnswer=(view as Button).text.toString().toInt()
-        if (selectedAnswer==getRightAnswer()){
-            trueAnswer++
+        val intent=Intent(this, SecondActivity::class.java)
+        if ((view as Button).text.toString().toInt()==getRightAnswer()){
+            intent.putExtra("result", "Right!")
         }else{
-            falseAnswer++
-        }
-        if(trueAnswer+falseAnswer== LEVEL_COUNT) {
-            val intent = Intent(this, SecondActivity::class.java)
-            intent.putExtra(RIGHT_ANSWERS_COUNT, trueAnswer)
-            intent.putExtra(WRONG_ANSWERS_COUNT,falseAnswer)
+            intent.putExtra("result", "Wrong!")}
             startActivity(intent)
-        } else {
-            playGame()
-        }
     }
     private fun playGame(){
         firstNumber=generationRandomNumber(10,100)

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_second.*
 
 class SecondActivity : AppCompatActivity() {
@@ -13,10 +14,8 @@ class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
-        val dj=intent.getIntExtra(MainActivity.RIGHT_ANSWERS_COUNT,0)
-        val qj=intent.getIntExtra(MainActivity.WRONG_ANSWERS_COUNT,0)
-        TvResultTrue.text= dj.toString()
-        TvResultFalse.text=qj.toString()
+        val result=intent.getStringExtra("result")
+        tvfirst.text=result
 
         btn6.setOnClickListener {
             val intent=Intent(this, MainActivity::class.java)
