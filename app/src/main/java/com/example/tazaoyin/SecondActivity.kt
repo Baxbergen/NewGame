@@ -14,8 +14,10 @@ class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
-        val result=intent.getStringExtra("result")
-        tvfirst.text=result
+        val dj=intent.getIntExtra(MainActivity.RIGHT_ANSWERS_COUNT,0)
+        val qj=intent.getIntExtra(MainActivity.WRONG_ANSWERS_COUNT,0)
+        TvResultTrue.text= dj.toString()
+        TvResultFalse.text=qj.toString()
 
         btn6.setOnClickListener {
             val intent=Intent(this, MainActivity::class.java)
